@@ -54,7 +54,7 @@ int analyze(const u_char* packet, unsigned int length){
     print_ip(ntohl(pk_hdr.ip.ip_dst.s_addr));
 
     printf("Source Port: %d\n", ntohs(pk_hdr.tcp.th_sport));
-    printf("Source Port: %d\n", ntohs(pk_hdr.tcp.th_dport));
+    printf("Destination Port: %d\n", ntohs(pk_hdr.tcp.th_dport));
 
     int size = 16;
     if(size > length - (LIBNET_ETH_H+LIBNET_IPV4_H+4*pk_hdr.tcp.th_off)){
